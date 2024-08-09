@@ -8,15 +8,16 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-            width: 100%; /* Ensure full width */
+            width: 100%;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         /* Top section with left ads, content, and right ads */
         .top-section {
             display: flex;
-            width: 100%; /* Ensure full width */
+            width: 100%;
             flex: 1;
             position: relative;
         }
@@ -30,6 +31,8 @@
             width: 15%; /* Width for ads */
             min-width: 150px; /* Ensure ads are not too thin */
             height: 100%;
+            padding: 0 10px; /* Add margin to prevent touching the edges */
+            box-sizing: border-box; /* Include padding in the element's total width */
         }
 
         .ad-container-left {
@@ -52,6 +55,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         /* Ad placeholders styling */
@@ -72,7 +76,8 @@
             display: flex;
             justify-content: space-between;
             padding: 10px;
-            width: 100%; /* Ensure full width */
+            width: 100%;
+            box-sizing: border-box;
         }
 
         /* Bottom ads styling */
@@ -93,7 +98,7 @@
 
             <!-- Main Content -->
             <div class="main-content">
-                <h1 class="pagetitle">Learn French words with flash cards!</h1>
+                <h1 class="pagetitle">Flashcards</h1>
                 <div class="flashcardSetContainer">
                     <div class="customSelect">
                         <select id="flashcardSetSelect" style="appearance: none; background-color: transparent; border: 2px solid #4CAF50; color: #4CAF50; font-size: 16px; padding: 8px 40px 8px 16px; border-radius: 12px; cursor: pointer; transition-duration: 0.3s;">
