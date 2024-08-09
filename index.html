@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <! -- 6 -->
     <link rel="stylesheet" type="text/css" href="french-flash-cards.css">
     <style>
         /* Container for the entire page layout */
         .page-container {
-            position: relative;
             display: flex;
             flex-direction: column;
             height: 100vh;
@@ -14,44 +12,31 @@
             padding: 0;
         }
 
-        /* Top section container with left, main, and right sections */
+        /* Top section with left ads, content, and right ads */
         .top-section {
             display: flex;
             flex: 1;
-            margin: 0 auto; /* Centers the main content */
             width: 100%;
         }
 
         /* Left and right ad containers */
         .ad-container-left,
         .ad-container-right {
-            position: absolute;
-            top: 0;
-            bottom: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 15%; /* Adjust width as needed */
-        }
-
-        .ad-container-left {
-            left: 0;
-        }
-
-        .ad-container-right {
-            right: 0;
+            width: 15%; /* Adjust this to control ad width */
+            min-width: 150px; /* Ensure ads are not too thin */
         }
 
         /* Main content centered */
         .main-content {
-            flex: 1;
-            margin: 0 auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 15%; /* Ensure content is not covered by ads */
+            flex: 1;
         }
 
         /* Ad placeholders styling */
