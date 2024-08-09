@@ -86,41 +86,40 @@
             margin: 0 10px;
         }
 
-        /* Mobile Version Styles */
-        @media (max-width: 768px) {
-            /* Remove side ads on mobile */
-            .ad-container-left,
-            .ad-container-right {
-                display: none;
-            }
-
-            /* Main content takes up more space */
-            .main-content {
-                margin: 0;
-                padding: 0 10px;
-                width: 100%;
-            }
-
-            /* Flashcards and other content scaled for mobile */
-            .flashcard {
-                width: 50%; /* Adjust this as needed */
-                max-width: 300px;
-            }
-
-            /* Top ad placement */
+        /* Mobile-friendly adjustments */
+        @media screen and (max-width: 768px) {
             .top-section {
                 flex-direction: column;
+                align-items: center;
             }
 
-            /* Bottom ads display vertically */
+            .ad-container-left,
+            .ad-container-right {
+                display: none; /* Hide side ads on mobile */
+            }
+
+            .main-content {
+                margin-left: 0;
+                margin-right: 0;
+                width: 100%; /* Content takes full width on mobile */
+            }
+
+            .flashcard {
+                width: 50%; /* Flashcards take up 50% of the screen width */
+            }
+
             .ad-container-bottom {
                 flex-direction: column;
                 align-items: center;
             }
 
             .ad-container-bottom .ad {
-                width: 90%;
                 margin: 10px 0;
+                width: 100%;
+            }
+
+            .ad-container-bottom {
+                margin-top: 20px;
             }
         }
     </style>
@@ -128,12 +127,7 @@
 <body>
     <div class="page-container">
         <div class="top-section">
-            <!-- Top Ad for Mobile -->
-            <div class="ad-container-top">
-                <div class="ad ad-top-1">Top Ad (Mobile)</div>
-            </div>
-
-            <!-- Left Ads (Desktop Only) -->
+            <!-- Left Ads -->
             <div class="ad-container-left">
                 <div class="ad ad-left-1">Left Ad 1</div>
                 <div class="ad ad-left-2">Left Ad 2</div>
@@ -141,7 +135,7 @@
 
             <!-- Main Content -->
             <div class="main-content">
-                <h1 class="pagetitle">Flashcards</h1>
+                <h1 class="pagetitle">French Flash Cards!</h1>
                 <div class="flashcardSetContainer">
                     <div class="customSelect">
                         <select id="flashcardSetSelect" style="appearance: none; background-color: transparent; border: 2px solid #4CAF50; color: #4CAF50; font-size: 16px; padding: 8px 40px 8px 16px; border-radius: 12px; cursor: pointer; transition-duration: 0.3s;">
@@ -178,7 +172,7 @@
                 </div>
             </div>
 
-            <!-- Right Ads (Desktop Only) -->
+            <!-- Right Ads -->
             <div class="ad-container-right">
                 <div class="ad ad-right-1">Right Ad 1</div>
                 <div class="ad ad-right-2">Right Ad 2</div>
