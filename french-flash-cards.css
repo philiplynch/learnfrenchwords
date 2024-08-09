@@ -1,0 +1,303 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flashcard {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-face {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.english {
+    position: absolute;
+    bottom: 10px; /* Adjust as per your design */
+    color: black; /* Or any color of your choice */
+    font-size: 12px; /* Adjust as per your design */
+    z-index: 1; /* This will put .english on top if it was under .flashcard */
+    width: 100%; /* Needed to center the text properly */
+    text-align: center; /* To center the text */
+    display: none; /* Hide by default */
+}
+
+.flashcard.flipped .english {
+    display: block; /* Show when the card is flipped */
+}
+
+.pagetitle {
+    font-size: 32px;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.front {
+    background-color: #fff;
+    font-size: 100px;
+}
+
+.back {
+    background-color: #fdd835;
+    transform: rotateY(180deg);
+    font-size: 24px;
+}
+
+.card-face::before {
+    content: "FLIP";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    color: black;
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+}
+
+.remove-card {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.remove-icon {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.remove-button:hover::after {
+    content: 'Remove Card';
+    position: absolute;
+    font-size: 12px; /* adjust this to your desired size */
+    background: none; /* removes the red circle background */
+    /* Adjust these next lines to position the label where you want it */
+    top: -20px;
+    left: 20px;
+}
+
+.flashcard:hover .card-face::before {
+    color: black;
+}
+
+.flashcard:hover .card-face::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    border-radius: 12px;
+}
+
+.flashcard.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.flashcard.flipped .back {
+    transform: rotateY(360deg);
+}
+
+.remove-label {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.controls {
+    margin-top: 50px;
+}
+
+.controls > button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+}
+
+.controls > button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+.controls > a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.controls > a:hover {
+    color: #45a049;
+}
+.flashcardSetContainer {
+    margin-top: 20px;
+}
+
+.customSelect {
+    position: relative;
+    display: inline-block;
+}
+
+.customSelect select {
+    font-size: 16px;
+    padding: 8px 40px 8px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.customSelect select option {
+    font-size: 16px;
+    padding: 10px 20px; /* Add padding around each option */
+}
+
+#flashcardSetSelect {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+    font-size: 16px;
+    padding: 12px 40px 12px 16px; /* Add more padding to the select */
+    border-radius: 12px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+#flashcardSetSelect option {
+    font-size: 16px;
+    padding: 10px 20px; /* Add padding around each option */
+}
+
+
+.arrowIcon {
+    /* Styles for the custom arrow icon */
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #4CAF50;
+    pointer-events: none;
+}
+
+#flashcardSetSelect:hover {
+    /* Additional styles for when the select is hovered */
+    background-color: #4CAF50;
+    color: white;
+}
+
+#flashcardSetSelect:focus {
+    /* Additional styles for when the select is focused */
+    outline: none;
+    box-shadow: 0 0 8px #4CAF50;
+}
+
+/* Adjust the dropdown menu spacing */
+#flashcardSetSelect option {
+    padding: 8px 12px; /* Add padding to the options */
+}
+
+#flashcardSetSelect option {
+    padding: 8px 12px; /* Add padding to the options */
+}
+
+.english-container {
+    position: absolute;
+    bottom: 10px;
+    width: 160px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+}
+
+.english-container:hover {
+    background-color: #eecc04; /* Change the color as needed */
+}
+
+.english {
+    display: none;
+}
+
+.back:hover {
+    cursor: pointer;
+    background-color: #c7b42c;
+}
+
+.back.clicked {
+    background-color: #c7b42c;
+}
+
+
+
+.english-word {
+    position: absolute;
+    bottom: 10px;
+    width: 160px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f7f7ef;
+    border-radius: 12px;
+    display: none;
+    /* Add this line */
+    font-size: 12px;
+}
+
+.see-english {
+    /* Style your "See English" box here */
+    text-align: center;
+    font-size: 1em;
+    cursor: pointer; /* Makes it obvious this can be clicked */
+}
+
+.hidden {
+    display: none;
+}
+
+#prev {
+    background-color: blue;
+}
