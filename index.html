@@ -2,11 +2,66 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="french-flash-cards.css">
+    <style>
+        /* Container for the entire page layout */
+        .page-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        /* Styling for ad placeholders */
+        .ad {
+            background-color: lightgray;
+            padding: 20px;
+            text-align: center;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        /* Section for ads on the left side */
+        .ad-container-left {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Main content section */
+        .main-content {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        /* Section for ads on the right side */
+        .ad-container-right {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Section for ads at the bottom */
+        .ad-container-bottom {
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Styling for bottom ads to align them side by side */
+        .ad-container-bottom .ad {
+            flex: 1;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="pagetitle">Flashcards</h1>
-        
+    <div class="page-container">
         <!-- Left Ads -->
         <div class="ad-container-left">
             <div class="ad ad-left-1">Left Ad 1</div>
@@ -15,6 +70,7 @@
 
         <!-- Main Content -->
         <div class="main-content">
+            <h1 class="pagetitle">Flashcards</h1>
             <div class="flashcardSetContainer">
                 <div class="customSelect">
                     <select id="flashcardSetSelect" style="appearance: none; background-color: transparent; border: 2px solid #4CAF50; color: #4CAF50; font-size: 16px; padding: 8px 40px 8px 16px; border-radius: 12px; cursor: pointer; transition-duration: 0.3s;">
@@ -56,7 +112,7 @@
             <div class="ad ad-right-1">Right Ad 1</div>
             <div class="ad ad-right-2">Right Ad 2</div>
         </div>
-        
+
         <!-- Bottom Ads -->
         <div class="ad-container-bottom">
             <div class="ad ad-bottom-1">Bottom Ad 1</div>
