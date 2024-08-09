@@ -1,132 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- test 4 -->
     <link rel="stylesheet" type="text/css" href="french-flash-cards.css">
-    <style>
-        /* Container for the entire page layout */
-        .page-container {
-            display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            gap: 10px;
-            padding: 10px;
-            height: 100vh;
-        }
-
-        /* Styling for ad placeholders */
-        .ad {
-            background-color: lightgray;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        /* Section for ads on the left side */
-        .ad-container-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            margin-right: auto; /* Pushes left ads to the extreme left */
-        }
-
-        /* Section for ads on the right side */
-        .ad-container-right {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            margin-left: auto; /* Pushes right ads to the extreme right */
-        }
-
-        /* Main content section */
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        /* Section for ads at the bottom */
-        .ad-container-bottom {
-            grid-column: 1 / 4;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Styling for bottom ads to align them side by side */
-        .ad-container-bottom .ad {
-            flex: 1;
-            margin: 10px;
-        }
-    </style>
 </head>
 <body>
-    <div class="page-container">
-        <!-- Left Ads -->
-        <div class="ad-container-left">
-            <div class="ad ad-left-1">Left Ad 1</div>
-            <div class="ad ad-left-2">Left Ad 2</div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <h1 class="pagetitle">Flashcards</h1>
-            <div class="flashcardSetContainer">
-                <div class="customSelect">
-                    <select id="flashcardSetSelect" style="appearance: none; background-color: transparent; border: 2px solid #4CAF50; color: #4CAF50; font-size: 16px; padding: 8px 40px 8px 16px; border-radius: 12px; cursor: pointer; transition-duration: 0.3s;">
-                        <option value="food" style="font-size: 16px; padding: 10px 30px;">Food</option>
-                        <option value="animals" style="font-size: 16px; padding: 10px 30px;">Animals</option>
-                        <option value="household" style="font-size: 16px; padding: 10px 30px;">Household</option>
-                        <!-- Add more options for additional flashcard sets. -->
-                    </select>
-                    <div class="arrowIcon"></div>
-                </div>
-            </div>
-
-            <div class="description">
-                <p>Click anywhere on the card to see the French word for the image.</p>
-                <p>Once you know the word, click the ❌ in the left corner to remove it from the deck.</p>
-            </div>
-
-            <div class="flashcard">
-                <div class="card-face front"></div>
-                <div class="card-face back">
-                    <div class="french-word"></div>
-                    <div class="english-word">f</div>
-                    <div class="english-container">See English</div>
-                </div>
-                <div class="remove-card">
-                    <span class="remove-icon">&#10005;</span>
-                </div>
-            </div>
-
-            <div class="controls">
-                <button id="prev">Previous</button>
-                <button id="next">New Card &nbsp; ➤</button>
-                <a href="#" id="dontShowAgain"></a>
+    <div class="container">
+        <h1 class="pagetitle">Flashcards</h1>
+        <div class="flashcardSetContainer">
+            <div class="customSelect">
+                <select id="flashcardSetSelect" style="appearance: none; background-color: transparent; border: 2px solid #4CAF50; color: #4CAF50; font-size: 16px; padding: 8px 40px 8px 16px; border-radius: 12px; cursor: pointer; transition-duration: 0.3s;">
+                    <option value="food" style="font-size: 16px; padding: 10px 30px;">Food</option>
+                    <option value="animals" style="font-size: 16px; padding: 10px 30px;">Animals</option>
+                    <option value="household" style="font-size: 16px; padding: 10px 30px;">Household</option>
+                    <!-- Add more options for additional flashcard sets. -->
+                </select>
+                <div class="arrowIcon"></div>
             </div>
         </div>
 
-        <!-- Right Ads -->
-        <div class="ad-container-right">
-            <div class="ad ad-right-1">Right Ad 1</div>
-            <div class="ad ad-right-2">Right Ad 2</div>
+        <div class="description">
+            <p>Click anywhere on the card to see the French word for the image.</p>
+            <p>Once you know the word, click the ❌ in the left corner to remove it from the deck.</p>
         </div>
 
-        <!-- Bottom Ads -->
-        <div class="ad-container-bottom">
-            <div class="ad ad-bottom-1">Bottom Ad 1</div>
-            <div class="ad ad-bottom-2">Bottom Ad 2</div>
-            <div class="ad ad-bottom-3">Bottom Ad 3</div>
+        <div class="flashcard">
+            <div class="card-face front"></div>
+            <div class="card-face back">
+                <div class="french-word"></div>
+                <div class="english-word">f</div>
+                <div class="english-container">See English</div>
+            </div>
+            <div class="remove-card">
+                <span class="remove-icon">&#10005;</span>
+            </div>
+        </div>
+
+
+
+        <div class="controls">
+            <button id="prev">Previous</button>
+            <button id="next">New Card &nbsp; ➤</button>
+            <a href="#" id="dontShowAgain"></a>
         </div>
     </div>
 
+
+
+    
     <script src="french-flash-cards.js" type="module"></script>
 </body>
 </html>
