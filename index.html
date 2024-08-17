@@ -2,55 +2,42 @@
 layout: flashcard
 title: Learn French Words
 ---
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="french-flash-cards.css">
-</head>
-<body>
-    <div class="container">
-        <h1 class="pagetitle">Flashcards</h1>
-        <div class="flashcardSetContainer">
-            <div class="customSelect">
-                <select id="flashcardSetSelect" style="appearance: none; background-color: transparent; border: 2px solid #4CAF50; color: #4CAF50; font-size: 16px; padding: 8px 40px 8px 16px; border-radius: 12px; cursor: pointer; transition-duration: 0.3s;">
-                    <option value="food" style="font-size: 16px; padding: 10px 30px;">Food</option>
-                    <option value="animals" style="font-size: 16px; padding: 10px 30px;">Animals</option>
-                    <option value="household" style="font-size: 16px; padding: 10px 30px;">Household</option>
-                    <!-- Add more options for additional flashcard sets. -->
-                </select>
-                <div class="arrowIcon"></div>
-            </div>
-        </div>
 
-        <div class="description">
-            <p>Click anywhere on the card to see the French word for the image.</p>
-            <p>Once you know the word, click the ❌ in the left corner to remove it from the deck.</p>
-        </div>
-
-        <div class="flashcard">
-            <div class="card-face front"></div>
-            <div class="card-face back">
-                <div class="french-word"></div>
-                <div class="english-word">f</div>
-                <div class="english-container">See English</div>
-            </div>
-            <div class="remove-card">
-                <span class="remove-icon">&#10005;</span>
-            </div>
-        </div>
-
-
-
-        <div class="controls">
-            <button id="prev">Previous</button>
-            <button id="next">New Card &nbsp; ➤</button>
-            <a href="#" id="dontShowAgain"></a>
+<div class="container">
+    <h1 class="pagetitle">Flashcards</h1>
+    <div class="flashcardSetContainer">
+        <div class="customSelect">
+            <select id="flashcardSetSelect" style="appearance: none; background-color: transparent; border: 2px solid #4CAF50; color: #4CAF50; font-size: 16px; padding: 8px 40px 8px 16px; border-radius: 12px; cursor: pointer; transition-duration: 0.3s;">
+                <option value="food" style="font-size: 16px; padding: 10px 30px;">Food</option>
+                <option value="animals" style="font-size: 16px; padding: 10px 30px;">Animals</option>
+                <option value="household" style="font-size: 16px; padding: 10px 30px;">Household</option>
+            </select>
+            <div class="arrowIcon"></div>
         </div>
     </div>
 
+    <div class="description">
+        <p>Click anywhere on the card to see the French word for the image.</p>
+        <p>Once you know the word, click the ❌ in the left corner to remove it from the deck.</p>
+    </div>
 
+    <div class="flashcard">
+        <div class="card-face front"></div>
+        <div class="card-face back">
+            <div class="french-word"></div>
+            <div class="english-word">f</div>
+            <div class="english-container">See English</div>
+        </div>
+        <div class="remove-card">
+            <span class="remove-icon">&#10005;</span>
+        </div>
+    </div>
 
-    
-    <script src="french-flash-cards.js" type="module"></script>
-</body>
-</html>
+    <div class="controls">
+        <button id="prev">Previous</button>
+        <button id="next">New Card &nbsp; ➤</button>
+        <a href="#" id="dontShowAgain"></a>
+    </div>
+</div>
+
+<script src="french-flash-cards.js" type="module"></script>
