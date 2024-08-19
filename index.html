@@ -36,3 +36,16 @@ title: Learn French Words 7
     <button id="next">New Card &nbsp; ➤</button>
     <a href="#" id="dontShowAgain"></a>
 </div>
+
+
+<h2>Recent Blog Posts</h2>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span>{{ post.date | date: "%B %d, %Y" }}</span>
+    </li>
+  {% endfor %}
+</ul>
+
