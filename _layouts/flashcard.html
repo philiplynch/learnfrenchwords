@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/path/to/your/styles.css' | relative_url }}"> <!-- Ensure your CSS is linked correctly -->
+    <link rel="stylesheet" href="{{ '/french-flash-cards.css' | relative_url }}">
 </head>
 <body>
     <header>
-        {% include header.html %} <!-- Optional: If you have a header file -->
+        {% include header.html %}
     </header>
 
     <div class="container">
         <h1 class="pagetitle">{{ page.title }}</h1>
-        {{ content }} <!-- This will render the content from your index.html -->
+        {{ content }}
     </div>
 
     <footer>
-        {% include footer.html %} <!-- Optional: If you have a footer file -->
+        {% include footer.html %}
     </footer>
 
-    <script src="{{ '/path/to/your/french-flash-cards.js' | relative_url }}" type="module"></script>
+    <script src="{{ '/french-flash-cards.js' | relative_url }}" type="module"></script>
 </body>
 </html>
